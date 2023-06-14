@@ -1,19 +1,25 @@
-ackage main
+package main
 
 import (
 	"fmt"
+	"math"
 )
 
 func main() {
-	array := [6]float64{}
+	slice := []int{8, 5, 12, 3, 10, 15, 7, 1, 6, 9}
 
-	var numero float64
-	fmt.Print("Digite um número: ")
-	fmt.Scanln(&numero)
+	min := math.MaxInt64
+	max := math.MinInt64
 
-	for i := 0; i < len(array); i++ {
-		array[i] = numero
+	for _, valor := range slice {
+		if valor < min {
+			min = valor
+		}
+		if valor > max {
+			max = valor
+		}
 	}
 
-	fmt.Println(array)
+	fmt.Println("Valor mínimo:", min)
+	fmt.Println("Valor máximo:", max)
 }
